@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
-import './Login.css';
+import './main-style.css';
 import { useNavigate } from 'react-router-dom';
 import Cookies from 'universal-cookie';
 import { Button, TextField, Typography } from '@mui/material';
+import Title from './Title';
 
 const Login: React.FC = () => {
   const [userName, setUserName] = useState<string>('');
@@ -28,26 +29,24 @@ const Login: React.FC = () => {
 
   return (
     <div className="container">
-      <Typography variant="h4" mb={2} sx={{ color: 'black' }}>
-        Bejelentkezés
-      </Typography>
+      <Title label="Login" />
       <form className="form-container" onSubmit={handleSubmit}>
         <TextField
-          label="Felhasználó név"
+          label="Username"
           value={userName}
           onChange={(e) => setUserName(e.target.value)}
           error={error}
         />
         <TextField
           type="password"
-          label="Jelszó"
+          label="Password"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
           error={error}
-          helperText={error ? 'Hibás bejelentkezési adatok!' : ''}
+          helperText={error ? 'Incorrect username or password' : ''}
         />
         <Button variant="contained" type="submit">
-          Bejelentkezés
+          Login
         </Button>
       </form>
     </div>

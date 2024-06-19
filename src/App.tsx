@@ -6,12 +6,10 @@ import Login from './components/Login';
 import AuthChecker from './components/AuthChecker';
 
 const App: React.FC = () => {
-  const isLoginPage = window.location.pathname.endsWith('/login');
   return (
     <Router>
       <div className="App">
         <header className="App-header">
-          {isLoginPage && <h1>Welcome to the Test App</h1>}
           <Routes>
             <Route path="/" element={<UserList />} />
             <Route path="/login" element={<Login />} />
