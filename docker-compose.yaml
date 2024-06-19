@@ -1,0 +1,8 @@
+version: '3.8'
+services:
+  frontend:
+    build:
+      dockerfile: Dockerfile
+    container_name: test_app
+    ports:
+      - '3001:3000'
