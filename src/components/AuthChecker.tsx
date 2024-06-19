@@ -13,7 +13,7 @@ const AuthChecker: React.FC = () => {
     }
   }, [navigate]);
 
-  return <></>;
+  return null;
 };
 
 export default AuthChecker;

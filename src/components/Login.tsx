@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import './Login.css';
 import { useNavigate } from 'react-router-dom';
 import Cookies from 'universal-cookie';
+import { Button, TextField, Typography } from '@mui/material';
 
 const Login: React.FC = () => {
   const [userName, setUserName] = useState<string>('');
@@ -20,26 +21,35 @@ const Login: React.FC = () => {
     }
   };
 
+  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    handleLogin();
+  };
+
   return (
     <div className="container">
-      <input
-        className="input-element"
-        type="text"
-        placeholder="Felhasználó név"
-        value={userName}
-        onChange={(e) => setUserName(e.target.value)}
-      />
-      <input
-        className="input-element"
-        type="password"
-        placeholder="Jelszó"
-        value={password}
-        onChange={(e) => setPassword(e.target.value)}
-      />
-      <button className="login-button" onClick={handleLogin}>
+      <Typography variant="h4" mb={2} sx={{ color: 'black' }}>
         Bejelentkezés
-      </button>
-      {error && <div className="error-label">Hiba a bejelentkezés során!</div>}
+      </Typography>
+      <form className="form-container" onSubmit={handleSubmit}>
+        <TextField
+          label="Felhasználó név"
+          value={userName}
+          onChange={(e) => setUserName(e.target.value)}
+          error={error}
+        />
+        <TextField
+          type="password"
+          label="Jelszó"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+          error={error}
+          helperText={error ? 'Hibás bejelentkezési adatok!' : ''}
+        />
+        <Button variant="contained" type="submit">
+          Bejelentkezés
+        </Button>
+      </form>
     </div>
   );
 };

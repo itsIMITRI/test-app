@@ -1,14 +1,21 @@
 .container {
+  width: 40vw;
+  height: 50vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: white;
+  border-radius: 16px;
+}
+
+.form-container {
   display: flex;
   flex-direction: column;
   gap: 16px;
 }
 
-.input-element {
-  height: 20px;
-}
-
 .error-label {
   color: red;
-  font-size: 14px;
+  font-size: 12px;
 }
