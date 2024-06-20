@@ -2,6 +2,7 @@
 
 A `UserList.tsx` -ben nem létező végpont volt megadva, de mivel a feladat megkövetelte hogy ez kerüljön átalakításra így ez törlésre került.
 A `useApi.ts` -ben a `sendPost` és a `sendGet` metódusban lévő hibakezelés nem megfelelően volt megírva, ez a feladatoknál az **1. feladat** résznél ki van fejtve.
+A `reportWebVitals.ts` -ben a `reportWebVitals` metódusnál hiányzott a return type, erre az eslint hívta fel a figyelmet, ez a metódus kapott egy `void` visszatérési értéket.
 
 ### Telepített csomagok:
 
