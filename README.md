@@ -1,7 +1,7 @@
 ### Hibák:
 
 A `UserList.tsx` -ben nem létező végpont volt megadva, de mivel a feladat megkövetelte hogy ez kerüljön átalakításra így ez törlésre került.
-A `useApi.ts` -ben a `sendPost` és a `sendGet`
+A `useApi.ts` -ben a `sendPost` és a `sendGet` metódusban lévő hibakezelés nem megfelelően volt megítva, ez a feladatoknál az **1. feladat** résznél ki van fejtve.
 
 ### Telepített csomagok:
 
