@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import './main-style.css';
 import { useNavigate } from 'react-router-dom';
 import Cookies from 'universal-cookie';
-import { Button, TextField, Typography } from '@mui/material';
+import { Button, TextField } from '@mui/material';
 import Title from './Title';
 
 const Login: React.FC = () => {
