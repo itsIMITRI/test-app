@@ -17,6 +17,16 @@ Itt több parancsot kellett futtatni mivel több a Material-UI-hoz több csomag 
 `yarn add @mui/material @mui/styled-engine-sc styled-components`
 `yarn add @mui/icons-material`
 
+**React Bootstrap Typeahead**:
+A 2. feladathoz kért komponens
+`yarn add react-bootstrap-typeahead`
+
+**Bootstrap**:
+A Bootstrap Typeahead-hez szükséges volt feltelepíteni hogy az alapértelmezett megjelenés jól működjön.
+`yarn add bootstrap`
+Emellett az `index.tsx`-be importálni kellett a bootstrap css-t is:
+`import 'bootstrap/dist/css/bootstrap.css';`
+
 ### 1. feladat:
 
 A hibakezelés nem megfelelően volt megírva a `sendPost` és a `sendGet` függvényekben a következők miatt:
@@ -41,8 +51,7 @@ Ez a komponens lényegében figyeli a cookie-ban lévő `isLoggedIn` értéket �
 
 Ez a szűrő felület, csak bejelentkezés után érhető el.
 Itt fel lett használva a statikus tömb, és az api-n keresztül lévő hívás, a lista elemek és az input mező törölve lett.
-Ehelyett a MUI által biztosított `Autocomplete` komponens lett fehasználva, ami tulajdonképpen egy typeahead komponens.
-Annyi átakalítást igényelt ez a kompnens, hogy felül kellett neki írni a `getOptionLabel` prop-ját, hogy megtudja jeleníteni a user-ek nevét, mivel alaból az ennek átadott tömb-ben az objecteknek a `label` -jét keresi, de mivel az a megadott statikus tömb-ben lévő objecteknek nincs, így ezt módosítani kellett hogy a `name` property-jét nézze labelnek.
+Ehelyett a bootstrap által biztosított `React Bootstrap Typeahead` komponenst kellet felhasználni.
 Került ide pluszba egy logout gomb, ez a felhasználó kiléptetésére szolgál, false-ra állítja az `isLoggedIn` cookiet és átnavigál a `/login` oldalra.
 
 ### 4. feladat:

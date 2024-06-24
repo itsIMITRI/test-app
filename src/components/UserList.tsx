@@ -1,9 +1,10 @@
 import React from 'react';
-import { Autocomplete, Button, TextField } from '@mui/material';
+import { Button } from '@mui/material';
 import './main-style.css';
 import Title from './Title';
 import Cookies from 'universal-cookie';
 import { useNavigate } from 'react-router-dom';
+import { Typeahead } from 'react-bootstrap-typeahead';
 
 interface User {
   id: number;
@@ -27,12 +28,12 @@ const UserList: React.FC = () => {
   return (
     <div className="container">
       <Title label="Filter panel" />
-      <Autocomplete
-        disablePortal
+      <Typeahead
+        id="users"
+        placeholder="Users"
+        labelKey="name"
         options={users}
-        sx={{ width: 300 }}
-        renderInput={(params) => <TextField {...params} label="Users" />}
-        getOptionLabel={(user) => user.name}
+        style={{ width: 300 }}
       />
       <Button
         variant="contained"
